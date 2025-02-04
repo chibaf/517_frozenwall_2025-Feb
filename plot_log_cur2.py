@@ -68,8 +68,8 @@ while True:
   data3.insert(0,array2)
   rez2 = [[data2[j][i] for j in range(len(data2))] for i in range(len(data2[0]))] # transposing a matrix
   rez3 = [[data3[j][i] for j in range(len(data3))] for i in range(len(data3[0]))] # transposing a matrix
-  x=range(0, 10, 1)
 #
+  x=range(0, 10, 1)
   plt.figure(100)
   plt.clf()
   plt.ylim(-25,30)
