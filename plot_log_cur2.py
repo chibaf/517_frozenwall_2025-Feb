@@ -73,12 +73,6 @@ while True:
 #
   plt.figure(100)
   plt.clf()
-  plt.ylim(0,400000)
-  plt.plot(x,data)
-  plt.pause(0.1)
-#
-  plt.figure(200)
-  plt.clf()
   plt.ylim(-25,30)
   tl=[0]*10
   h3=[]
@@ -87,6 +81,24 @@ while True:
   for i in range(0,10):
     h3.append(tl[i])
   plt.legend(handles=h3)
+  plt.pause(0.1)
+#
+  plt.figure(200)
+  plt.clf()
+  plt.ylim(0,400000)
+  plt.plot(x,data)
+  plt.pause(0.1)
+#
+  plt.figure(300)
+  plt.clf()
+  plt.ylim(0,10)
+  tl=[0]*3
+  h2=[]
+  for i in range(0,len(rez2)):
+   tl[i],=plt.plot(x,rez2[i],label="C"+str(i))
+  for i in range(0,len(rez2)):
+    h2.append(tl[i])
+  plt.legend(handles=h2)
   plt.pause(0.1)
  except KeyboardInterrupt:
   f.close()
