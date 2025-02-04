@@ -44,14 +44,13 @@ while True:
   curr1=read_ser1.read(ser1)
   curr2=read_ser1.read(ser2)
   if curr1[0]=="CUR":
-    cur=curr1[1]
+    cur=float(curr1[1])
   else:
-    dcu=curr1[1:3]
+    dcu=[float(curr1[1]),float(curr1[2]),float(curr1[3])]
   if curr2[0]=="DCU":
-    dcu=curr2[1:3]
+    dcu=[float(curr2[1]),float(curr2[2]),float(curr2[3])]
   else:
-    cur=curr2[1]
-  cur=curr1[1]
+    cur=float(curr2[1])
   array2=sport.read_logger(ser3)
   ss=st+ss[1:5]+","+str(rttime)+","
   ss12=ss
@@ -60,11 +59,11 @@ while True:
     ss=ss+str(array2[i])+","
   ss=ss+str(array2[len(array2)-1])
   f.write(ss+"\n")
-  
+  print("dcu=",dcu)
   data.pop(-1)
   data2.pop(-1)
   data3.pop(-1)
-  data.insert(0,float(cur))
+  data.insert(0,cur)
   data2.insert(0,dcu)
   data3.insert(0,array2)
   rez2 = [[data2[j][i] for j in range(len(data2))] for i in range(len(data2[0]))] # transposing a matrix
@@ -91,7 +90,7 @@ while True:
 #
   plt.figure(300)
   plt.clf()
-  plt.ylim(0,10)
+  plt.ylim(0,150)
   tl=[0]*3
   h2=[]
   for i in range(0,len(rez2)):
