@@ -59,7 +59,6 @@ while True:
     ss=ss+str(array2[i])+","
   ss=ss+str(array2[len(array2)-1])
   f.write(ss+"\n")
-  print("dcu=",dcu)
   data.pop(-1)
   data2.pop(-1)
   data3.pop(-1)
