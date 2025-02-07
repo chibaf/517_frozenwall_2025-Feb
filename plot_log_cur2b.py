@@ -82,11 +82,13 @@ while True:
   for i in range(0,10):
     h3.append(tl[i])
   ax[0,0].legend(handles=h3)
+#  plt.clf()
 #  plt.pause(0.1)
 #
 #  plt.figure(200)
 #  plt.clf()
 #  ax[0,1].ylim(0,400000)
+#  plt.clf()
   ax[0,1].plot(x,data)
 #  plt.pause(0.1)
 #
@@ -99,11 +101,12 @@ while True:
    tl[i],=ax[1,0].plot(x,rez2[i],label="C"+str(i))
   for i in range(0,len(rez2)):
     h2.append(tl[i])
+#  plt.clf()
   ax[1,0].legend(handles=h2)
 #
   fig.tight_layout()
   plt.show()
-  plt.pause(0.1)
+#  plt.pause(0.1)
   plt.clf()
  except KeyboardInterrupt:
   f.close()
