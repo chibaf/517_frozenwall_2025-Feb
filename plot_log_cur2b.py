@@ -33,6 +33,7 @@ data2=[data02]*10
 data03=[0]*10
 data3=[data03]*10
 
+fig, ax = plt.subplots(2, 2)
 while True:
  try:
   ttime=time.time()-start
@@ -69,7 +70,6 @@ while True:
   rez2 = [[data2[j][i] for j in range(len(data2))] for i in range(len(data2[0]))] # transposing a matrix
   rez3 = [[data3[j][i] for j in range(len(data3))] for i in range(len(data3[0]))] # transposing a matrix
 #
-  fig, ax = plt.subplots(2, 2)
 #
   x=range(0, 10, 1)
 #  plt.figure(100)
@@ -103,7 +103,8 @@ while True:
 #
   fig.tight_layout()
   plt.show()
-#  plt.pause(0.1)
+  plt.pause(0.1)
+  plt.clf()
  except KeyboardInterrupt:
   f.close()
   ser1.close()
